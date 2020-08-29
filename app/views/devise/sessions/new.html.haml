@@ -1,0 +1,15 @@
+.Account
+  .Account_box
+    .Account_title
+      %h2 Login
+    .Account_field
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", class:"field_child", placeholder:"e-mail"
+        .field
+          %br/
+          = f.password_field :password, autocomplete: "current-password", class:"field_child", placeholder:"password"
+        .actions
+          = f.submit "Log in", class: "sign__btn"
+      = render "devise/shared/links"

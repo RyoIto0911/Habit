@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Habit
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .wrapper
+      .header
+        .header__top
+          -# = link_to root_path, method: :get do
+          -#   = image_tag src="material/logo/logo.png", size: "140x40", calss: "headerLogo-index"
+          -# = form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |form|
+          -#     -# = form.text_field :keyword, placeholder: "検索", class: "search-input", size: "80x80"
+          -#     -# = button_tag type: 'submit', class: 'search-btn' do
+    = yield

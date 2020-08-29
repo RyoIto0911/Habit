@@ -1,0 +1,22 @@
+.Account
+  .Account_box
+    .Account_title
+      %h2 New Account
+    .Account_field
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .field
+          %br/
+          = f.text_field :name, autofocus: true, class:"field_child", autocomplete: "name", placeholder: "name"
+        .field
+          %br/
+          = f.email_field :email, autofocus: true, class:"field_child", autocomplete: "email", placeholder:"e-mail"
+        .field
+          %br/
+          = f.password_field :password, autocomplete: "new-password", class:"field_child", placeholder:"Password of 6 characters or more"
+        .field
+          %br/
+          = f.password_field :password_confirmation, autocomplete: "new-password", class:"field_child", placeholder:"password confirmation"
+        .actions
+          = f.submit "Sign up", class: "sign__btn"
+      = render "devise/shared/links"
