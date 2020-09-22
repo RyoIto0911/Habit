@@ -11,4 +11,15 @@
     .wrapper
       .header
         .header__top
+          .home_header
+            .home_title
+              %h1 Habit
+            .home_btn
+              -if user_signed_in?
+                = link_to "Logout", destroy_user_session_path, method: :delete, class: "page"
+                = link_to "Memo", "#", class: "page"
+                = link_to "Recode", "#", class: "page"
+              -else
+                = link_to "Login",  new_user_session_path, class: "page"
+                = link_to "NewAccount",  new_user_registration_path, class: "page"
     = yield
